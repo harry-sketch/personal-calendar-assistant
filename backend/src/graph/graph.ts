@@ -6,7 +6,10 @@ const app = State.compile();
 export const runAgent = async () => {
   try {
     const completions = await app.invoke({
-      messages: [system_prompt, { role: "human", content: "" }],
+      messages: [
+        system_prompt,
+        { role: "human", content: "How is the weather in Ko Tao?" },
+      ],
     });
 
     console.log(
