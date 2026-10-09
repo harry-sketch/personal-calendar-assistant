@@ -1,6 +1,8 @@
-import { createCalendarEventTools } from "./create-calendar-event-tool.ts";
-import { getCalendarEventTool } from "./get-calendar-event-tool.ts";
-import { searchTool } from "./search.ts";
+import {
+  createCalendarEventTools,
+  getCalendarEventTool,
+} from "./calendar.tool.ts";
+import { searchTool } from "./search.tool.ts";
 
 export const tools = [
   searchTool,
