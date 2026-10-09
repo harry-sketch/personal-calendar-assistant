@@ -1,0 +1,14 @@
+{
+  "name": ".",
+  "module": "main.ts",
+  "type": "module",
+  "scripts": {
+    "dev": "bun main.ts"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  }
+}
