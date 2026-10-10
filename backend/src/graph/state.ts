@@ -1,14 +1,20 @@
 import {
   END,
+  MemorySaver,
   MessagesAnnotation,
   START,
   StateGraph,
 } from "@langchain/langgraph";
+
 import { shouldContinue } from "./edge.ts";
+
 import { agentNode } from "./nodes/agent.node.ts";
+
 import { toolNode } from "./nodes/tools.node.ts";
 
-export const State = new StateGraph(MessagesAnnotation)
+const checkpointer = new MemorySaver();
+
+const State = new StateGraph(MessagesAnnotation)
   .addNode("agent", agentNode)
   .addNode("tool", toolNode)
   .addEdge(START, "agent")
@@ -17,3 +23,7 @@ export const State = new StateGraph(MessagesAnnotation)
     tool: "tool",
     end: END,
   });
+
+export const app = State.compile({
+  checkpointer,
+});

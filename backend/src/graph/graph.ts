@@ -1,8 +1,7 @@
 import { stdin, stdout } from "node:process";
 import { createInterface } from "node:readline/promises";
-import { State } from "./state.ts";
-
-const app = State.compile();
+import { config } from "../utils/helpers.ts";
+import { app } from "./state.ts";
 
 export const runAgent = async () => {
   const rl = createInterface({
@@ -18,9 +17,12 @@ export const runAgent = async () => {
         return "Good Bye";
       }
 
-      const completions = await app.invoke({
-        messages: [{ role: "human", content: q }],
-      });
+      const completions = await app.invoke(
+        {
+          messages: [{ role: "human", content: q }],
+        },
+        config,
+      );
 
       console.log(
         `Assistant: ${completions.messages[completions.messages.length - 1]?.content}`,
