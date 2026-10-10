@@ -20,8 +20,10 @@ export const getCalendarEventTool = tool(
       const results = resp.data.items;
 
       if (!results || results.length === 0) {
-        console.log("No upcoming events found.");
-        return;
+        return JSON.stringify({
+          found: false,
+          message: "No upcoming events found",
+        });
       }
 
       const events = results.map(
@@ -52,7 +54,10 @@ export const getCalendarEventTool = tool(
         },
       );
 
-      return JSON.stringify(events);
+      return JSON.stringify({
+        found: true,
+        events,
+      });
     } catch (error) {
       console.log("Failed to connect to the calendar", error);
     }
