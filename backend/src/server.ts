@@ -1,5 +1,5 @@
 import { createExpressServer } from "./express-server/express.server.ts";
-import { oauth2Client, scopes } from "./google/google.auth.ts";
+import { oauth2Client, scopes } from "./google-client/google.auth.ts";
 
 const PORT = process.env.PORT || 6969;
 

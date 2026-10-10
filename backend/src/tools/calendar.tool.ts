@@ -1,6 +1,6 @@
 import { tool } from "@langchain/core/tools";
 import z from "zod/v3";
-import { calendar } from "../google/calendar.client.ts";
+import { calendar } from "../google-client/calendar.client.ts";
 import type { ICreateCalendarRequestBody } from "../types/types.ts";
 import { timeZone } from "../utils/helpers.ts";
 
