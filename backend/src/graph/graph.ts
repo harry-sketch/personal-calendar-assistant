@@ -1,6 +1,5 @@
 import { stdin, stdout } from "node:process";
 import { createInterface } from "node:readline/promises";
-import { system_prompt } from "../prompts/system.prompt.ts";
 import { State } from "./state.ts";
 
 const app = State.compile();
@@ -20,10 +19,7 @@ export const runAgent = async () => {
       }
 
       const completions = await app.invoke({
-        messages: [
-          system_prompt,
-          { role: "human", content: "Do I have any meetings today ?" },
-        ],
+        messages: [{ role: "human", content: q }],
       });
 
       console.log(
