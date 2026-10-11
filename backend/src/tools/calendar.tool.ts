@@ -63,7 +63,7 @@ export const getCalendarEventTool = tool(
     }
   },
   {
-    name: "get-calendar-events",
+    name: "get_calendar_events",
     description: "Call to get the calendar events",
     schema: z.object({
       q: z
@@ -139,7 +139,7 @@ export const createCalendarEventTools = tool(
     }
   },
   {
-    name: "create-calendar-events",
+    name: "create_calendar_events",
     description: "Call to create the calendar events",
     schema: z.object({
       attendees: z.array(

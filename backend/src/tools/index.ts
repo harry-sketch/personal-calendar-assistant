@@ -3,10 +3,10 @@ import {
   getCalendarEventTool,
 } from "./calendar.tool.ts";
 import { searchContactTool } from "./search.contact.tool.ts";
-import { searchTool } from "./search.tool.ts";
+import { webSearch } from "./search.tool.ts";
 
 export const tools = [
-  searchTool,
+  webSearch,
   createCalendarEventTools,
   getCalendarEventTool,
   searchContactTool,
