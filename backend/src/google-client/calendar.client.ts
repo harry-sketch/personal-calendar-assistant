@@ -7,3 +7,5 @@ oauth2Client.setCredentials({
 });
 
 export const calendar = google.calendar({ version: "v3", auth: oauth2Client });
+
+export const people = google.people({ version: "v1", auth: oauth2Client });
